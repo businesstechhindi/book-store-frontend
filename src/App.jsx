@@ -26,10 +26,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://book-store-server-05l0.onrender.com/all-books", {
-        withCredntials: true,
-        credentials: "include",
-      })
+      .get("https://book-store-server-05l0.onrender.com/all-books")
       .then((res) => {
         dispatch({ type: "setBooksData", payload: res.data.allBooks });
         dispatch({ type: "setResult", payload: res.data.allBooks });
